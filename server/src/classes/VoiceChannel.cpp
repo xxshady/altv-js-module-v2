@@ -2,8 +2,8 @@
 #include "cpp-sdk/ICore.h"
 
 // clang-format off
-extern js::Class sharedBaseObjectClass;
-extern js::Class worldObjectClass("VoiceChannel", &sharedBaseObjectClass, nullptr, [](js::ClassTemplate& tpl)
+extern js::Class baseObjectClass;
+extern js::Class voiceChannelClass("VoiceChannel", &baseObjectClass, nullptr, [](js::ClassTemplate& tpl)
 {
     tpl.Method<alt::IVoiceChannel, bool, alt::IPlayer*, &alt::IVoiceChannel::HasPlayer>("hasPlayer");
     tpl.Method<alt::IVoiceChannel, void, alt::IPlayer*, &alt::IVoiceChannel::AddPlayer>("addPlayer");
